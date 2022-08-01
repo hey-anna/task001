@@ -1,0 +1,49 @@
+.user {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.user .user-title {
+    flex-grow: 1;
+}
+
+.user .user-year {
+    font-size: 0.5rem;
+    color: red;
+}
+
+.user_id {
+    text-align: center;
+    /* padding: 12px 0; */
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+/*
+mb-2
+p-3
+*/
+
+.linkBox {
+    display: flex;
+    flex: 12;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex01 {
+    flex: 1;
+}
+.flex02 {
+    flex: 2;
+}
+
+.card:active,
+.card:hover {
+    border: #40a1d1 1px solid;
+}
