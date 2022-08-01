@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+// 업데이트 업데이트 업데이트
 const Card = ({ userId, onClick, children }) => {
     //console.log(props);
     // console.log(children);
