@@ -29,13 +29,6 @@ mb-2
 p-3
 */
 
-.linkBox {
-    display: flex;
-    flex: 12;
-    justify-content: center;
-    align-items: center;
-}
-
 .flex01 {
     flex: 1;
 }
@@ -43,7 +36,46 @@ p-3
     flex: 2;
 }
 
+.card-body {
+    padding: 0;
+}
 .card:active,
 .card:hover {
     border: #40a1d1 1px solid;
+}
+
+.linkBox {
+    display: flex;
+    flex: 12;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-flow: column;
+    flex-direction: column;
+    max-width: 100%;
+    /* overflow: hidden; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* footer */
+.card-footer {
+    text-align: center;
+    margin-top: 5%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    flex: 1;
 }

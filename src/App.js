@@ -29,6 +29,7 @@ function App() {
                         {/* <Route path="/Users/:id" exact element={<User />}></Route> */}
                     </Routes>
                 </div>
+                <div className="card-footer">아뮤즈</div>
             </Router>
         </div>
     );
