@@ -1,3 +1,18 @@
+html,
+body,
+.App {
+    height: 100%;
+}
+
+body,
+.App {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .user {
     display: flex;
     align-items: center;
@@ -31,7 +46,19 @@ p-3
 
 .flex01 {
     flex: 1;
+    position: relative;
 }
+
+.flex01 .ftStyle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-right: 16px;
+}
+
 .flex02 {
     flex: 2;
 }
@@ -49,7 +76,8 @@ p-3
     flex: 12;
     justify-content: center;
     align-items: center;
-    padding: 1.25rem;
+    padding: 1.25rem 3rem;
+    text-align: center;
 }
 
 body {
@@ -78,4 +106,117 @@ body {
 
 .container {
     flex: 1;
+}
+
+.tabs {
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    margin-right: 5px;
+
+    list-style: none;
+}
+
+/* .tabs li {
+    margin-right: 5px;
+
+    list-style: none;
+}
+
+.tabs li a {
+    text-decoration: none;
+} */
+
+/* .tabs li,
+.tabs li a:hover {
+    color: #fff;
+} */
+/* .tabs li.active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+} */
+
+/* .btn-outline-secondary:active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+} */
+
+/* page Link */
+
+/* .preNext {
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #064090;
+    position: relative;
+} */
+
+.pageLink {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 0;
+    height: 100%;
+}
+
+.pageLink button {
+    display: flex;
+    padding: 20px;
+    padding: 20px;
+    border: 0;
+    background: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.pageLink button {
+    color: #212529;
+}
+
+.pageLink button:disabled i {
+    color: rgb(0 0 0 / 30%);
+}
+
+.d-flex .st {
+    display: flex;
+    align-items: center;
+}
+
+.btnStyle {
+    display: flex;
+    justify-content: center;
+}
+
+.btnStyle button {
+    width: 25%;
+    border: 0;
+    background: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    /* border: 1px solid pink; */
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5px;
+    padding: 5px 12px;
+    margin: 0 4px;
+}
+
+@media (max-width: 767px) {
+    .btnStyle {
+        justify-content: space-between;
+    }
+    .btnStyle button {
+        width: 49%;
+        margin: unset;
+    }
 }
