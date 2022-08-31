@@ -13,6 +13,15 @@ body,
     flex-direction: column;
 }
 
+.wrap {display: flex; flex-direction: column;}
+
+h1, h2 {margin-bottom: 12px !important; color: rgba(0,0,0,.9) !important;}
+
+h2 {margin-top:16px !important;}
+
+h1 { font-size: 18px ;}
+h2 { font-size: 16px ;}
+
 .user {
     display: flex;
     align-items: center;
@@ -71,6 +80,11 @@ p-3
     border: #40a1d1 1px solid;
 }
 
+/* .link:active,
+.link:hover {
+    border: #40a1d1 1px solid;
+} */
+
 .linkBox {
     display: flex;
     flex: 12;
@@ -113,6 +127,11 @@ body {
     display: flex;
     margin-bottom: 20px;
 }
+
+/* .tabs nav {
+    display: flex;
+    justify-content: center;
+} */
 
 .tabs button {
     margin-right: 5px;
@@ -171,7 +190,7 @@ body {
 .pageLink button {
     display: flex;
     padding: 20px;
-    padding: 20px;
+
     border: 0;
     background: 0;
     height: 100%;
@@ -182,13 +201,14 @@ body {
     color: #212529;
 }
 
-.pageLink button:disabled i {
-    color: rgb(0 0 0 / 30%);
+.pageLink button:disabled, .pageLink button:disabled i {
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .d-flex .st {
     display: flex;
     align-items: center;
+    margin-left: 12px;
 }
 
 .btnStyle {
@@ -209,6 +229,31 @@ body {
     border-radius: 5px;
     padding: 5px 12px;
     margin: 0 4px;
+}
+
+.btnStyle button:disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+.username {
+    color: #555;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* users */
+.nameCardStyle ul li .namestyle01 {background-color:#2ea3f2 ;}
+
+/* PostView */
+.stBox {display:flex; flex-direction: row;}
+.commentsTitle {display: flex; flex-direction: row;}
+.commentsTitle p {display:flex; align-items: center; margin-left: 12px; }
+.allComments {margin-top: 24px; justify-content: flex-end; display: flex;}
+/* .email {justify-content: flex-end;} */
+/* footer */
+.footerStyle {
+    color:#2ea3f2;
 }
 
 @media (max-width: 767px) {
