@@ -96,7 +96,10 @@ const PostView = () => {
       <div>
         <div className="allComments mb-2">
           <p className="inline-flex rounded-full bg-green-100 py-2 px-3 text-xs font-semibold leading-5 text-green-800">
-            총 댓글 개수 : {currentComments.length}
+            총 댓글 개수 :{' '}
+            {currentComments.length === 0
+              ? '댓글 없음'
+              : currentComments.length}
           </p>
         </div>
         <ul

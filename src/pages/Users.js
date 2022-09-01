@@ -75,7 +75,7 @@ const Users = () => {
                   className="col-span-1 flex rounded-md shadow-sm"
                 >
                   <div className="namestyle01 flex-shrink-0 flex items-center justify-center w-16 bg-600 text-white text-sm font-medium rounded-l-md">
-                    {urName.id !== 10 ? '0' + urName.id : urName.id}{' '}
+                    {urName.id !== 10 ? '0' + urName.id : urName.id}
                   </div>
                   <div className="namestyle02 flex-1 truncate px-4 py-2 text-sm">
                     {urName.name}
