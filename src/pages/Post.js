@@ -1,18 +1,15 @@
 import Card from '../components/Card';
-// import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Link, useParams } from 'react-router-dom';
 import { todoState } from '../state/todoCoil';
 import { useRecoilState } from 'recoil';
 import React, { useState } from 'react';
 // import styled from "styled-components";
-// import React, { useEffect, useState } from "react";
 
 const Post = () => {
   const [todo, setTodo] = useRecoilState(todoState);
   const { id } = useParams();
   // console.log("아이디", useParams());
 
-  //
   const userData = todo.filter((user, index, callback) => {
     return index === callback.findIndex((kyy) => kyy.userId === user.userId);
   });
@@ -23,7 +20,6 @@ const Post = () => {
     }
   }
   //   console.log('userData', userData);
-  //
 
   const postList = todo.filter((todo) => todo.userId == id);
   const [cardList, setCardList] = useState(postList);

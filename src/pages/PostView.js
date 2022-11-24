@@ -1,41 +1,48 @@
-// import React from 'react';
-import Card from '../components/Card';
-import { useParams, useNavigate } from 'react-router-dom';
-import { todoState, postCommentsState } from '../state/todoCoil';
+import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import React, { useState } from 'react';
-// import React, { useEffect, useState } from "react";
+import { todoState, postCommentsState } from '../state/todoCoil';
+import { useParams, useNavigate } from 'react-router-dom';
+import Card from '../components/Card';
 
 const PostView = () => {
   const [todo, setTodo] = useRecoilState(todoState);
   const [postComments, setPostComments] = useRecoilState(postCommentsState);
   const { id } = useParams();
-  let postView = todo.filter((todo) => todo.id == id);
+  let postView = todo.filter((td) => td.id == id);
   const currentComments = postComments.filter(
     (postComments) => postComments.postId == id,
   );
 
-  console.log(currentComments, 'currentComments');
-
-  const prevTit = todo.filter((todo) => {
-    return postView[0].id === 1
-      ? todo.id == Number(id)
-      : todo.id == Number(id) - 1;
-  });
-  const nextTit = todo.filter((todo) => {
-    return postView[0].id === 200
-      ? todo.id == Number(id)
-      : todo.id == Number(id) + 1;
-  });
+  console.log('currentComments', currentComments);
 
   const navigate = useNavigate();
-
   const prevBtn = () => {
     navigate(`/Post/${postView[0].userId}/PostView/${postView[0].id - 1}`);
   };
   const nextBtn = () => {
     navigate(`/Post/${postView[0].userId}/PostView/${postView[0].id + 1}`);
   };
+
+  const prevTit = todo.filter((td) => {
+    return postView[0].id === 1
+      ? td.id === Number(id)
+      : td.id == Number(id) - 1;
+  });
+  const nextTit = todo.filter((td) => {
+    return postView[0].id === todo.length
+      ? td.id === Number(id)
+      : td.id == Number(id) + 1;
+  });
+
+  const [disable, setDisable] = useState(false);
+  useEffect(() => {
+    if (todo.length === Number(id)) {
+      setDisable(true);
+    } else {
+      setDisable(false);
+    }
+  }, [id]);
+
   const prevTitBtn = () => {
     navigate(`/Post/${prevTit[0].userId}/PostView/${prevTit[0].id}`);
   };
@@ -71,7 +78,7 @@ const PostView = () => {
             <button disabled={postView[0].id === 1} onClick={prevBtn}>
               <i className="fa-solid fa-chevron-left"></i>
             </button>
-            <button disabled={postView[0].id === 200} onClick={nextTitBtn}>
+            <button disabled={disable} onClick={nextBtn}>
               <i className="fa-solid fa-chevron-right"></i>
             </button>
           </div>
@@ -87,8 +94,8 @@ const PostView = () => {
         </button>
         <button
           className="mt-2 max-w-4xl text-sm text-gray-500"
-          disabled={postView[0].id === 200}
-          onClick={nextBtn}
+          disabled={disable}
+          onClick={nextTitBtn}
         >
           {nextTit[0].title}
         </button>
@@ -123,7 +130,7 @@ const PostView = () => {
                       {postsView.body}
                     </p>
                     <p className="email mt-2 flex items-center text-sm text-gray-500">
-                      <i class="fa-solid fa-envelope mr-2 "></i>
+                      <i className="fa-solid fa-envelope mr-2 "></i>
                       {postsView.email}
                     </p>
                   </div>

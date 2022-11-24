@@ -2,14 +2,7 @@ import React from 'react';
 import Users from './pages/Users';
 import Post from './pages/Post';
 import PostView from './pages/PostView';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  NavLink,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 // 추가됨
 // import './styles/global.css';
@@ -37,9 +30,7 @@ function App() {
               <Route path="/Post/:id/PostView/:id" element={<PostView />} />
             </Routes>
           </div>
-          <div className="footerStyle card-footer text-500 text-3xl">
-            아뮤즈
-          </div>
+          <div className="footerStyle card-footer text-500 text-3xl">LOGO</div>
         </Router>
       </div>
     </RecoilRoot>
